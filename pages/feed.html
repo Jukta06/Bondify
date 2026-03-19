@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feed | Bondify</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="topbar-inner">
+        <a class="brand" href="feed.html"><i class="fa-solid fa-link"></i> Bondify</a>
+        <nav class="topnav">
+          <a href="feed.html"><i class="fa-solid fa-newspaper"></i> Feed</a>
+          <a href="profile.html"><i class="fa-solid fa-circle-user"></i> My Profile</a>
+          <div class="notifications-wrap">
+            <button id="notifications-btn" type="button" class="btn small ghost" aria-label="Notifications">
+              <i class="fa-solid fa-bell"></i>
+              <span class="notif-count" id="notif-count" hidden>0</span>
+            </button>
+            <div id="notifications-panel" class="notifications-panel" hidden></div>
+          </div>
+          <button type="button" class="btn small ghost" data-theme-toggle aria-label="Toggle theme">
+            <span class="theme-icon"><i class="fa-solid fa-moon"></i></span>
+            <span class="theme-label">Dark</span>
+          </button>
+          <button id="logout-btn" class="btn small"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container container-feed">
+      <section class="panel">
+        <h2><i class="fa-solid fa-pen-to-square"></i> Create Post</h2>
+        <form id="post-form" class="form-stack">
+          <textarea id="post-content" rows="3" maxlength="280" placeholder="What's happening?"></textarea>
+          <label class="form-label">Add image or file
+            <input type="file" id="post-file" multiple />
+          </label>
+          <div id="post-dropzone" class="post-dropzone">
+            <i class="fa-solid fa-cloud-arrow-up"></i>
+            <span>Drag and drop files here</span>
+          </div>
+          <div id="post-file-meta" class="muted post-file-meta"></div>
+          <div id="post-file-list" class="post-file-list"></div>
+          <button type="submit" class="btn primary"><i class="fa-solid fa-paper-plane"></i> Post</button>
+        </form>
+      </section>
+
+      <section class="panel">
+        <h2><i class="fa-solid fa-user-group"></i> Suggested Users</h2>
+        <div id="suggested-users" class="network-list"></div>
+      </section>
+
+      <section class="panel">
+        <h2><i class="fa-solid fa-magnifying-glass"></i> Search Users</h2>
+        <form id="user-search-form" class="form-stack">
+          <div class="search-row">
+            <input
+              type="text"
+              id="user-search-input"
+              placeholder="Search by name, username, or email"
+              maxlength="80"
+              required
+            />
+            <button type="submit" class="btn small primary"><i class="fa-solid fa-search"></i> Search</button>
+          </div>
+        </form>
+        <div id="user-search-results" class="network-list"></div>
+      </section>
+
+      <section class="panel">
+        <h2><i class="fa-solid fa-bolt"></i> Recent Posts</h2>
+        <div id="posts-list" class="list"></div>
+      </section>
+    </main>
+
+    <script type="module" src="../assets/js/pages/feed.js"></script>
+  </body>
+  </html>

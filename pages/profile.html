@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile | Bondify</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="topbar-inner">
+        <a class="brand" href="feed.html"><i class="fa-solid fa-link"></i> Bondify</a>
+        <nav class="topnav">
+          <a href="feed.html"><i class="fa-solid fa-newspaper"></i> Feed</a>
+          <a href="profile.html"><i class="fa-solid fa-circle-user"></i> My Profile</a>
+          <div class="notifications-wrap">
+            <button id="notifications-btn" type="button" class="btn small ghost" aria-label="Notifications">
+              <i class="fa-solid fa-bell"></i>
+              <span class="notif-count" id="notif-count" hidden>0</span>
+            </button>
+            <div id="notifications-panel" class="notifications-panel" hidden></div>
+          </div>
+          <button type="button" class="btn small ghost" data-theme-toggle aria-label="Toggle theme">
+            <span class="theme-icon"><i class="fa-solid fa-moon"></i></span>
+            <span class="theme-label">Dark</span>
+          </button>
+          <button id="logout-btn" class="btn small"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container container-profile">
+      <section id="profile-card" class="panel"></section>
+      <section class="panel">
+        <h2><i class="fa-solid fa-user-pen"></i> Edit Profile</h2>
+        <form id="profile-form" class="form-stack profile-form">
+          <label class="form-label">Display Name
+            <input type="text" id="profile-display-name" maxlength="100" required />
+          </label>
+          <label class="form-label">Bio
+            <textarea id="profile-bio" rows="3" maxlength="280" placeholder="Write a short bio"></textarea>
+          </label>
+          <label class="form-label">Profile Photo
+            <input type="file" id="profile-photo" accept="image/png,image/jpeg,image/webp,image/gif" />
+          </label>
+          <div class="upload-preview-wrap">
+            <img id="profile-photo-preview" class="upload-preview avatar" alt="Profile photo preview" />
+            <span class="muted">Leave empty to keep current image</span>
+          </div>
+          <label class="form-label">Cover Photo
+            <input type="file" id="cover-photo" accept="image/png,image/jpeg,image/webp,image/gif" />
+          </label>
+          <div class="upload-preview-wrap">
+            <img id="cover-photo-preview" class="upload-preview cover" alt="Cover photo preview" />
+            <span class="muted">Recommended wide image for better cover fit</span>
+          </div>
+          <button type="submit" class="btn primary"><i class="fa-solid fa-floppy-disk"></i> Save Profile</button>
+        </form>
+        <p id="profile-message" class="message"></p>
+      </section>
+      <section class="panel">
+        <h2><i class="fa-solid fa-people-arrows"></i> Followers & Following</h2>
+        <div class="network-columns">
+          <div>
+            <h3 class="network-title">Followers</h3>
+            <div id="followers-list" class="network-list"></div>
+          </div>
+          <div>
+            <h3 class="network-title">Following</h3>
+            <div id="following-list" class="network-list"></div>
+          </div>
+        </div>
+      </section>
+      <section class="panel">
+        <h2><i class="fa-solid fa-images"></i> My Posts</h2>
+        <div id="user-posts" class="list"></div>
+      </section>
+    </main>
+
+    <script type="module" src="../assets/js/pages/profile.js"></script>
+  </body>
+  </html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bondify - Where Bonds Begin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <main class="landing-shell">
+      <section class="hero-grid">
+        <article class="hero-content">
+          <div class="hero-tools">
+            <span class="landing-badge"><i class="fa-solid fa-link"></i> Connection Platform</span>
+            <button type="button" class="btn small ghost" data-theme-toggle aria-label="Toggle theme">
+              <span class="theme-icon"><i class="fa-solid fa-moon"></i></span>
+              <span class="theme-label">Dark</span>
+            </button>
+          </div>
+          <h1 class="hero-title">Bondify</h1>
+          <p class="hero-subtitle">
+            Where Bonds Begin — Connect authentically, build meaningful relationships, and discover a community that truly connects.
+          </p>
+          <div class="hero-stats">
+            <span class="stat-pill"><i class="fa-solid fa-handshake"></i> Real Connections</span>
+            <span class="stat-pill"><i class="fa-solid fa-shield-heart"></i> Trusted & Safe</span>
+            <span class="stat-pill"><i class="fa-solid fa-star"></i> Premium Experience</span>
+          </div>
+          <div class="actions-row">
+            <a class="btn primary" href="pages/login.html"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
+            <a class="btn" href="pages/register.html"><i class="fa-solid fa-user-plus"></i> Register</a>
+          </div>
+        </article>
+
+        <aside class="hero-visual bondify-logo-container" aria-hidden="true">
+          <svg class="bondify-logo" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="bondifyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#43b97a;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#2f9e65;stop-opacity:1" />
+              </linearGradient>
+            </defs>
+            <!-- Rounded square background -->
+            <rect x="10" y="10" width="100" height="100" rx="25" ry="25" fill="url(#bondifyGrad)" />
+            <!-- Left circle -->
+            <circle cx="45" cy="60" r="14" fill="none" stroke="#ffffff" stroke-width="3" />
+            <!-- Right circle -->
+            <circle cx="75" cy="60" r="14" fill="none" stroke="#ffffff" stroke-width="3" />
+            <!-- Connecting line -->
+            <line x1="59" y1="60" x2="61" y2="60" stroke="#ffffff" stroke-width="3" stroke-linecap="round" />
+            <!-- Center connection point -->
+            <circle cx="60" cy="60" r="3" fill="#ffffff" />
+          </svg>
+        </aside>
+      </section>
+
+      <section class="features-section">
+        <div class="feature-grid">
+          <article class="feature-card">
+            <i class="fa-solid fa-network-wired"></i>
+            <h3>Smart Connections</h3>
+            <p class="muted">Discover people with shared interests and build lasting bonds through intelligent recommendations.</p>
+          </article>
+          <article class="feature-card">
+            <i class="fa-solid fa-comments"></i>
+            <h3>Rich Engagement</h3>
+            <p class="muted">Share moments, mention friends, upload media, and engage in meaningful conversations.</p>
+          </article>
+          <article class="feature-card">
+            <i class="fa-solid fa-bell"></i>
+            <h3>Stay Connected</h3>
+            <p class="muted">Real-time notifications keep you updated on your bonds — posts from followers and mentions.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+    <script>
+      // Landing page: redirect authenticated users to feed
+      (function() {
+        try {
+          const session = JSON.parse(localStorage.getItem('session') || '{}');
+          if (session?.token) {
+            window.location.href = 'pages/feed.html';
+          }
+        } catch {}
+      })();
+    </script>
+    <script type="module" src="assets/js/pages/common.js"></script>
+  </body>
+  </html>

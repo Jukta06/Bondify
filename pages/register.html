@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register | Bondify</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+  </head>
+  <body>
+    <header class="topbar" style="margin-bottom: 20px;">
+      <div class="topbar-inner">
+        <a class="brand" href="../index.html" style="text-decoration: none;"><i class="fa-solid fa-arrow-left"></i> Back to Bondify</a>
+        <button type="button" class="btn small ghost" data-theme-toggle aria-label="Toggle theme">
+          <span class="theme-icon"><i class="fa-solid fa-moon"></i></span>
+          <span class="theme-label">Dark</span>
+        </button>
+      </div>
+    </header>
+    <main class="center-card narrow">
+      <div class="hero-tools">
+        <span class="landing-badge"><i class="fa-solid fa-link"></i> Bondify</span>
+      </div>
+      <h2 class="auth-title"><i class="fa-solid fa-id-card"></i> Create Account</h2>
+      <form id="register-form" class="form-stack">
+        <label class="form-label">Username
+          <input type="text" id="username" minlength="3" required />
+        </label>
+        <label class="form-label">Display Name
+          <input type="text" id="display-name" maxlength="100" placeholder="How your name appears" />
+        </label>
+        <label class="form-label">Email
+          <input type="email" id="email" required />
+        </label>
+        <label class="form-label">Password
+          <input type="password" id="password" minlength="6" required />
+        </label>
+        <button type="submit" class="btn primary"><i class="fa-solid fa-user-check"></i> Register</button>
+      </form>
+      <p class="muted auth-footer">Already have an account? <a href="login.html">Login</a></p>
+      <p id="message" class="message"></p>
+    </main>
+    <script type="module" src="../assets/js/pages/common.js"></script>
+    <script type="module" src="../assets/js/pages/register.js"></script>
+  </body>
+  </html>
