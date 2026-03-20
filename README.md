@@ -1,4 +1,4 @@
-# Bondify - Mini Social Networking Platform
+# Bondify - Mini Social Media Platform
 
 > **Where Bonds Begin** — A full-featured social media platform built with modern web standards, focusing on meaningful connections and community engagement.
 
